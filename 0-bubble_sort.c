@@ -1,5 +1,18 @@
 #include "sort.h"
-#include "exchange.h"
+/**
+ * exchange - swap array elements
+ * @array: list of integer array elements
+ * @start_index: first index value
+ * @next_index: next index
+ */
+void exchange(int *array, int start_index, int next_index)
+{
+	int temp;
+
+	temp = array[start_index];
+	array[start_index] = array[next_index];
+	array[next_index] = temp;
+}
 /**
  * bubble_sort - sorts an array of integers in ascending order
  * @array: list of an integer array elements
