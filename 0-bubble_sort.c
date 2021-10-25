@@ -1,5 +1,5 @@
 #include "sort.h"
-void exchange(int *, int, int);
+#include "exchange.h"
 /**
  * bubble_sort - sorts an array of integers in ascending order
  * @array: list of an integer array elements
@@ -25,18 +25,4 @@ void bubble_sort(int *array, size_t size)
 		if (flag == 0)
 			break;
 	}
-}
-/**
- * exchange - swap array elements
- * @array: list of integer array elements
- * @start_index: first index value
- * @next_index: next index
- */
-void exchange(int *array, int start_index, int next_index)
-{
-	int temp;
-
-	temp = array[start_index];
-	array[start_index] = array[next_index];
-	array[next_index] = temp;
 }
