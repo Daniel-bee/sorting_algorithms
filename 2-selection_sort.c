@@ -50,5 +50,5 @@ void switch_(int *list, int min, int i)
 	int temp = list[min];
 
 	list[min] = list[i];
-	list[i] = temp;	
+	list[i] = temp;
 }
