@@ -27,7 +27,7 @@ void insertion_sort_list(listint_t **list)
 }
 /**
  * display - display ddl list
- * @head: list
+ * @head: list fo dll node
  */
 void display(listint_t *head)
 {
