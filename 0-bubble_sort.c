@@ -29,7 +29,7 @@ void bubble_sort(int *array, size_t size)
 		}
 	}
 	else
-		return (NULL);
+		return;
 }
 /**
  * exchange - swap array elements
