@@ -1,5 +1,5 @@
 #include "sort.h"
-void display(listint_t *);
+void display(listint_t **);
 void exchangeData(listint_t *, listint_t *);
 /**
  * insertion_sort_list - sorts a doubly linked list of integers in
@@ -29,11 +29,11 @@ void insertion_sort_list(listint_t **list)
  * display - display ddl list
  * @head: list
  */
-void display(listint_t *head)
+void display(listint_t **head)
 {
 	listint_t *trav;
 
-	trav = head;
+	trav = *head;
 	while (trav->prev != NULL)
 		trav = trav->prev;
 	print_list(trav);
