@@ -8,7 +8,7 @@ void switch_(int *, int, int);
  */
 void selection_sort(int *array, size_t size)
 {
-	size_t i = 0, j = 0, min;
+	unsigned int i = 0, j = 0, min;
 
 	if (array == NULL  || size == 0)
 		return;
@@ -20,11 +20,10 @@ void selection_sort(int *array, size_t size)
 		{
 			if (array[j] < array[min])
 				min = j;
-			switch_(array, min, i);
-			print_array(array, size);
-
 			j++;
 		}
+		switch_(array, min, i);
+		print_array(array, size);
 		i++;
 	}
 }
