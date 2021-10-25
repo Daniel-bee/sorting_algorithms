@@ -1,5 +1,5 @@
 #include "sort.h"
-void switch_(int *, size_t, size_t);
+void switch_(int *, int*);
 /**
  *selection_sort - sorts an array of integers in
  *ascending order using the Selection sort algorithm
@@ -21,11 +21,10 @@ void selection_sort(int *array, size_t size)
 		{
 			if (array[j] < array[min])
 				min = j;
-			if (min != i)
-				switch_(array, min, i);
-			print_array(array, size);
 			j++;
 		}
+		switch_(&array[min], &array[i]);
+		print_array(array, size);
 		i++;
 	}
 }
@@ -35,11 +34,11 @@ void selection_sort(int *array, size_t size)
  *@min: min value index
  *@i: next index
  */
-void switch_(int *list, size_t min, size_t i)
+void switch_(int *min, int *i)
 {
-	size_t temp;
+	int temp;
 
-	temp = list[min];
-	list[min] = list[i];
-	list[i] = temp;
+	temp = *min;
+	*min = *i;
+	*i = temp;
 }
