@@ -4,7 +4,7 @@ void exchangeData(listint_t *, listint_t *);
 /**
  * insertion_sort_list - sorts a doubly linked list of integers in
  * ascending order using the Insertion sort algorithm
- * @list: list
+ * @list: DLL list
  *
  **/
 void insertion_sort_list(listint_t **list)
@@ -27,7 +27,7 @@ void insertion_sort_list(listint_t **list)
 }
 /**
  * display - display ddl list
- * @head: list
+ * @head: list fo dll node
  */
 void display(listint_t *head)
 {
