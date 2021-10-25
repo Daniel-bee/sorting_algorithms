@@ -21,10 +21,10 @@ void selection_sort(int *array, size_t size)
 		{
 			if (array[j] < array[min])
 				min = j;
+			if (min != i)
+				switch_(array, min, i);
 			j++;
 		}
-		if (min != i)
-			switch_(array, min, i);
 		print_array(array, size);
 		i++;
 	}
