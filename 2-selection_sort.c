@@ -23,7 +23,8 @@ void selection_sort(int *array, size_t size)
 				min = j;
 			j++;
 		}
-		switch_(array, min, i);
+		if (min != i)
+			switch_(array, min, i);
 		print_array(array, size);
 		i++;
 	}
