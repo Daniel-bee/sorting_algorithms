@@ -8,7 +8,7 @@ void switch_(int *, int*);
  */
 void selection_sort(int *array, size_t size)
 {
-	size_t i = 0, j = 0, min;
+	unsigned int i = 0, j = 0, min;
 
 	if (array == NULL  || size < 2)
 		return;
@@ -30,7 +30,6 @@ void selection_sort(int *array, size_t size)
 }
 /**
  *switch_ - swap value
- *@list: array list
  *@min: min value index
  *@i: next index
  */
