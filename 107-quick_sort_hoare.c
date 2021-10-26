@@ -25,7 +25,7 @@ int hoare_partition(int *list, int left, int right)
 {
 	int pivot = list[left];
 	int i = left - 1, j = right + 1;
-	static int size, c;
+	static int size, c = 0;
 
 	if (c == 0)
 		size = right + 1, c++;
@@ -44,9 +44,7 @@ int hoare_partition(int *list, int left, int right)
 		swap(list, i, j);
 		print_array(list, size);
 	}
-	swap(list, i, j);
-	print_array(list, size);
-	return (j);
+	return (-1);
 }
 /**
  *quick_ - pass element index
@@ -61,7 +59,7 @@ void quick_(int *list, int left, int right)
 	if (left < right)
 	{
 		pi = hoare_partition(list, left, right);
-		quick_(list, left, pi - 1);
+		quick_(list, left, pi);
 		quick_(list, pi + 1, right);
 	}
 }
