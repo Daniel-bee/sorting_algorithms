@@ -28,7 +28,8 @@ Third Pass
 ## Insertion sort
 	- Insertion sort is a simple sorting algorithm that builds the final sorted array (or list) one item at a time. 
 ```
-	Pseudocode 
+	**Pseudocode** 
+
 	i ← 1
 	while i < length(A)
     		j ← i
@@ -41,8 +42,10 @@ Third Pass
 ```
 ## Selection sort
 - In computer science, selection sort is an in-place comparison sorting algorithm. It has an O(n2) time complexity, which makes it inefficient on large lists, and generally performs worse than the similar insertion sort.
-**Eg.**
+
 ```
+**Example**
+
 arr[] = 64 25 12 22 11
 
 // Find the minimum element in arr[0...4]
@@ -64,8 +67,9 @@ arr[] = 64 25 12 22 11
 ```
 ## Quicksort
 - Quicksort is an in-place sorting algorithm. Developed by British computer scientist Tony Hoare in 1959[1] and published in 1961,[2] it is still a commonly used algorithm for sorting.
-**Algorithm**
+
 ```
+**Algorithm**
 // Sorts a (portion of an) array, divides it into partitions, then sorts those
 algorithm quicksort(A, lo, hi) is 
   // If indices are in correct order
