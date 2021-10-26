@@ -1,6 +1,7 @@
 #include "sort.h"
 int lomuto_partition(int *, int, int);
 void quick_(int *, int, int);
+void swap(int *, int, int);
 /**
  *quick_sort - sorts an array of integers in ascending
  *order using the Quick sort algorithm
@@ -12,7 +13,6 @@ void quick_sort(int *array, size_t size)
 	if (array == NULL || size == 0)
 		return;
 	quick_(array, 0, size - 1);
-
 }
 /**
  *lomuto_partition - partition to right high and left low
@@ -23,8 +23,8 @@ void quick_sort(int *array, size_t size)
  */
 int lomuto_partition(int *list, int left, int right)
 {
-	int pivot = list[right], temp;
-	int i = left - 1, j;
+	int pivot = list[right];
+	int i = left, j;
 	static int size, c;
 
 	if (c == 0)
@@ -35,21 +35,18 @@ int lomuto_partition(int *list, int left, int right)
 		{
 			if (i != j)
 			{
-				i++;
-				temp = list[i];
-				list[i] = list[j];
-				list[j] = temp;
+				swap(list, i, j);
 				print_array(list, size);
 			}
+			i++;
 		}
 	}
 	if (i != right)
 	{
-		temp = list[i + 1];
-		list[i + 1] = list[right];
-		list[right] = temp;
+		swap(list, i, right);
+		print_array(list, size);
 	}
-	return (i + 1);
+	return (i);
 }
 /**
  *quick_ - pass element index
@@ -59,11 +56,25 @@ int lomuto_partition(int *list, int left, int right)
  */
 void quick_(int *list, int left, int right)
 {
-	int pi = lomuto_partition(list, left, right);
+	int pi;
 
 	if (left < right)
 	{
+		pi = lomuto_partition(list, left, right);
 		quick_(list, left, pi - 1);
 		quick_(list, pi + 1, right);
 	}
+}
+/**
+ *swap - exchange value
+ *@list: array
+ *@x: left index
+ *@y: right index
+ */
+void swap(int *list, int x, int y)
+{
+	int temp = list[x];
+
+	list[x] = list[y];
+	list[y] = temp;
 }
