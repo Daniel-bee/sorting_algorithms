@@ -25,7 +25,7 @@ int hoare_partition(int *list, int left, int right)
 {
 	int pivot = list[left];
 	int i = left - 1, j = right + 1;
-	static int size, c = 0;
+	static int size, c;
 
 	if (c == 0)
 		size = right + 1, c++;
