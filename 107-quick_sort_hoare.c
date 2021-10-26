@@ -44,6 +44,7 @@ int hoare_partition(int *list, int left, int right)
 		swap(list, i, j);
 		print_array(list, size);
 	}
+	return (-1);
 }
 /**
  *quick_ - pass element index
