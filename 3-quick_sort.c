@@ -19,7 +19,6 @@ void quick_sort(int *array, size_t size)
  *@list: array list
  *@left: low index
  *@right: right index
- *@size: array length
  *Return: index
  */
 int lomuto_partition(int *list, int left, int right)
@@ -57,7 +56,6 @@ int lomuto_partition(int *list, int left, int right)
  *@list: array list
  *@left: left index
  *@right: right index
- *@size: array length
  */
 void quick_(int *list, int left, int right)
 {
