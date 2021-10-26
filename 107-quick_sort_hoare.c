@@ -3,7 +3,7 @@ int hoare_partition(int *, int, int);
 void quick_(int *, int, int);
 void swap(int *, int, int);
 /**
- *quick_sort - sorts an array of integers in ascending
+ *quick_sort_hoare - sorts an array of integers in ascending
  *order using the Quick sort algorithm
  *@array: list
  *@size:array size
@@ -15,7 +15,7 @@ void quick_sort_hoare(int *array, size_t size)
 	quick_(array, 0, size - 1);
 }
 /**
- *lomuto_partition - partition to right high and left low
+ *hoare_partition - partition to right high and left low
  *@list: array list
  *@left: low index
  *@right: right index
@@ -32,20 +32,17 @@ int hoare_partition(int *list, int left, int right)
 
 	while (1)
 	{
-		do
-		{
+		do {
 			i++;
-		} while(list[i] < pivot);
-		do
-		{
+		} while (list[i] < pivot);
+		do {
 			j--;
-		} while(list[j] > pivot);
+		} while (list[j] > pivot);
 
 		if (i >= j)
 			return (j);
 		swap(list, i, j);
 		print_array(list, size);
-		
 	}
 	swap(list, i, j);
 	print_array(list, size);
