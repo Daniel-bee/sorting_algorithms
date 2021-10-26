@@ -46,6 +46,7 @@ int lomuto_partition(int *list, int left, int right, int size)
 		temp = list[i + 1];
 		list[i + 1] = list[right];
 		list[right] = temp;
+		print_array(list, size);
 	}
 	return (i + 1);
 }
