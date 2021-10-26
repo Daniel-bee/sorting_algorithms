@@ -10,7 +10,7 @@ void swap(int *, int, int);
  */
 void quick_sort_hoare(int *array, size_t size)
 {
-	if (array == NULL || size == 0)
+	if (array == NULL || size < 2)
 		return;
 	quick_(array, 0, size - 1);
 }
@@ -44,7 +44,6 @@ int hoare_partition(int *list, int left, int right)
 		swap(list, i, j);
 		print_array(list, size);
 	}
-	return (j);
 }
 /**
  *quick_ - pass element index
