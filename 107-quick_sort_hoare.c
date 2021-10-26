@@ -23,14 +23,14 @@ void quick_sort_hoare(int *array, size_t size)
  */
 int hoare_partition(int *list, int left, int right)
 {
-	int pivot = list[left];
+	int pivot = list[right];
 	int i = left - 1, j = right + 1;
 	static int size, c;
 
 	if (c == 0)
 		size = right + 1, c++;
 
-	while (1)
+	while (list)
 	{
 		do {
 			i++;
@@ -59,8 +59,8 @@ void quick_(int *list, int left, int right)
 	if (left < right)
 	{
 		pi = hoare_partition(list, left, right);
-		quick_(list, left, pi);
-		quick_(list, pi + 1, right);
+		quick_(list, left, pi - 1);
+		quick_(list, pi, right);
 	}
 }
 /**
