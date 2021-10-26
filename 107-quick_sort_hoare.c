@@ -10,7 +10,7 @@ void swap(int *, int, int);
  */
 void quick_sort_hoare(int *array, size_t size)
 {
-	if (array == NULL || size < 2)
+	if (array == NULL || size < 2 || size == 0)
 		return;
 	quick_(array, 0, size - 1);
 }
